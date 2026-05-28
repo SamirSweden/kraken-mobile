@@ -5,18 +5,18 @@ import {
     Pressable
 } from "react-native"
 
-import {SafeAreaView} from "react-native-safe-area-context";
+import { useSafeAreaInsets} from "react-native-safe-area-context";
 
 export default function PanelScreen({navigation}: any){
+    const insets = useSafeAreaInsets()
+
     return (
-        <SafeAreaView>
-            <View>
-                <Text className={styles.text}>/ panel</Text>
-                <Pressable onPress={() => navigation.navigate('Home')}>
-                    <Text>go home</Text>
-                </Pressable>
-            </View>
-        </SafeAreaView>
+        <View style={{flex:1 ,paddingTop : insets.top}}>
+            <Text className={styles.text}>/ panel</Text>
+            <Pressable onPress={() => navigation.navigate('Home')}>
+                <Text>go home</Text>
+            </Pressable>
+        </View>
     )
 }
 
