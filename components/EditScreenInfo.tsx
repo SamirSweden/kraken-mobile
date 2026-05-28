@@ -2,12 +2,11 @@ import {
   Text, 
   View , 
   Pressable,
-
 } from 'react-native';
 
 
-export const EditScreenInfo = () => {
 
+export const EditScreenInfo = ({navigation}: any) => {
 
   const title = 'use the best , use kraken';
   const description ='Kraken the best crypto app';
@@ -20,7 +19,9 @@ export const EditScreenInfo = () => {
         <Text className={styles.getStartedText}>{title}</Text>
         <Text className={styles.getStartedText}>{description}</Text>
         <View className={styles.apps__btn}>
-          <Pressable className={styles.apps__button}
+          <Pressable
+              onPress={() => navigation.navigate('Panel')}
+              className={styles.apps__button}
            >
             <Text className={styles.apps__text}>{startBtn}</Text>
            </Pressable>
