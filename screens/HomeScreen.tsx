@@ -4,7 +4,7 @@ import {
     View
 } from "react-native";
 
-import {  useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {useNavigation} from "@react-navigation/native";
 
 export default function HomeScreen() {
