@@ -13,7 +13,7 @@ export default function PanelScreen({navigation}: any){
     return (
         <View style={{flex:1 ,paddingTop : insets.top}}>
             <Text className={styles.text}>/ panel</Text>
-            <Pressable onPress={() => navigation.navigate('Home')}>
+            <Pressable onPress={() => navigation.navigate('HomeScreen')}>
                 <Text>go home</Text>
             </Pressable>
         </View>

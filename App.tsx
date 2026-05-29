@@ -1,15 +1,14 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
-import './global.css';
-import { SafeAreaProvider  } from 'react-native-safe-area-context';
-import {NavigationContainer} from "@react-navigation/native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import './global.css';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from "@react-navigation/native";
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from "./screens/HomeScreen";
 import SplashScreen from "./SplashScreen";
 import {useState , useEffect} from "react";
+import PanelScreen from "./screens/PanelScreen";
 
-
+//const Drawer = createDrawerNavigator()
 const Stack = createNativeStackNavigator();
 
 function Root(){
@@ -26,17 +25,24 @@ function Root(){
     if(loading) return <SplashScreen />
 
     return (
-        <Stack.Navigator screenOptions={{headerShown: false}}>
-            <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
+        <NavigationContainer>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
+                <Stack.Screen
+                    name="HomeScreen"
+                    component={HomeScreen}
+                />
+                <Stack.Screen
+                    name="PanelScreen"
+                    component={PanelScreen}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 
 
 export default function App() {
   return (
-    <NavigationContainer>
         <Root />
-    </NavigationContainer>
   );
 }

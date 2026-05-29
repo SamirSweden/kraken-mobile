@@ -1,4 +1,5 @@
-import { 
+
+import {
   Text, 
   View , 
   Pressable,
@@ -20,7 +21,7 @@ export const EditScreenInfo = ({navigation}: any) => {
         <Text className={styles.getStartedText}>{description}</Text>
         <View className={styles.apps__btn}>
           <Pressable
-              onPress={() => navigation.navigate('Panel')}
+              onPress={() => navigation.navigate('Home')}
               className={styles.apps__button}
            >
             <Text className={styles.apps__text}>{startBtn}</Text>
